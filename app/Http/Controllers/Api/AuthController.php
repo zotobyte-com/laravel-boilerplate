@@ -40,7 +40,7 @@ class AuthController extends Controller
             return responseBuilder(Response::HTTP_OK,$this->respondWithToken($token),"Successfully logged in") ;
         }
 
-        return response()->json(['error' => 'Unauthorized'], 401);
+        return responseBuilder(Response::HTTP_UNAUTHORIZED);
     }
 
     /**
