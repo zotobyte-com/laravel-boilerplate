@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Tymon\JWTAuth\Facades\JWTAuth;
@@ -36,7 +37,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if ($token = JWTAuth::attempt($credentials)) {
-            return $this->respondWithToken($token);
+            return responseBuilder(Response::HTTP_OK,$this->respondWithToken($token),"Successfully logged in") ;
         }
 
         return response()->json(['error' => 'Unauthorized'], 401);
@@ -79,15 +80,15 @@ class AuthController extends Controller
      *
      * @param  string $token
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return array
      */
     protected function respondWithToken($token)
     {
-        return response()->json([
+        return [
             'access_token' =>'bearer '.$token,
             'token_type' => 'bearer',
             'expires_in' => auth('api')->factory()->getTTL() * 60
-        ]);
+        ];
     }
 
     /**
