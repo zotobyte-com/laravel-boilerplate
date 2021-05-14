@@ -20,15 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('login', 'Api\AuthController@login');
 
-Route::group([
-
-    'middleware' => 'api',
-
-], function ($router) {
-
-    Route::post('login', 'Api\AuthController@login');
+Route::group(['middleware' => ['auth:api']], function ($router) {
     Route::post('logout', 'Api\AuthController@logout');
     Route::post('refresh', 'Api\AuthController@refresh');
     Route::get('profile', 'Api\AuthController@me');
-
 });
