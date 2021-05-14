@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -13,7 +14,10 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        //
+        AuthorizationException::class,
+        HttpException::class,
+        ModelNotFoundException::class,
+        ValidationException::class,
     ];
 
     /**
@@ -43,13 +47,41 @@ class Handler extends ExceptionHandler
      * Render an exception into an HTTP response.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Throwable  $exception
+     * @param  \Throwable  $e
      * @return \Symfony\Component\HttpFoundation\Response
      *
      * @throws \Throwable
      */
-    public function render($request, Throwable $exception)
+    public function render($request, Throwable $e)
     {
-        return parent::render($request, $exception);
+        $rendered = parent::render($request, $e);
+
+        //for json request only
+        if( $request->is('api/*')){
+            // for validation error
+            if ($e instanceof ValidationException) {
+                $err = array();
+                foreach ($e->errors() as $key => $value) {
+                    $err[] =  (object) ["key" => $key, "message" => $value[0]];
+                }
+
+                $data = [
+                    'status' => 422,
+                    'message' => $e->getMessage(),
+                    'error' => $err
+                ];
+                return response()->json($data,200);
+            }
+            // for all other exceptions
+            return response()->json([
+                "status" => $rendered->getStatusCode(),
+                'error' => [
+                    'message' => $e->getMessage(),
+                ]
+            ], $rendered->getStatusCode());
+
+        }
+
+        return $rendered;
     }
 }
