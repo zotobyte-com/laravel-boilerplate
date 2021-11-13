@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_2982" data-name="Rectangle 2982" width="1920" height="1080" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.974" y1="0.23" x2="0.087" y2="0.769" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#7e2beb"/>
+      <stop offset="1" stop-color="#22e9d5"/>
+    </linearGradient>
+    <filter id="Subtraction_4" x="222.644" y="548.353" width="795.887" height="574.647" filterUnits="userSpaceOnUse">
+      <feOffset dx="23" dy="25" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Subtraction_5" x="966.692" y="0" width="994.308" height="1123.001" filterUnits="userSpaceOnUse">
+      <feOffset dx="23" dy="25" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <radialGradient id="radial-gradient" cx="0.695" cy="0.64" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fecbe2"/>
+      <stop offset="0" stop-color="#e5eaf8"/>
+      <stop offset="1" stop-color="#fff6fb"/>
+    </radialGradient>
+    <filter id="Ellipse_1" x="884.5" y="397.5" width="327" height="327" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="14.5" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <radialGradient id="radial-gradient-2" cx="0.695" cy="0.64" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff6fb"/>
+      <stop offset="0" stop-color="#e5eaf8"/>
+      <stop offset="1" stop-color="#fff6fb"/>
+    </radialGradient>
+    <filter id="Subtraction_6" x="1157.752" y="-0.001" width="803.248" height="481.233" filterUnits="userSpaceOnUse">
+      <feOffset dx="23" dy="25" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Mask_Group_1" data-name="Mask Group 1" clip-path="url(#clip-path)">
+    <g id="Group_3281" data-name="Group 3281">
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Subtraction_4)">
+        <path id="Subtraction_4-2" data-name="Subtraction 4" d="M1154.987,682.637H541.538L479.579,435.991a129.935,129.935,0,0,1,69.3-148.617l254-123.326a129.99,129.99,0,0,1,142.406,19.125l240.866,210.839a129.946,129.946,0,0,1,32.2,152.759l-63.356,135.866Z" transform="translate(-253 397.36)" opacity="0.08" fill="url(#linear-gradient)"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Subtraction_5)">
+        <path id="Subtraction_5-2" data-name="Subtraction 5" d="M1167,1080H494.758a245.571,245.571,0,0,1-62.092-89.131L231.78,496.176a245.7,245.7,0,0,1,90.66-296.535L619.549,0H1167V1080Z" transform="translate(753 0)" fill="#e3eafa"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Ellipse_1)">
+        <circle id="Ellipse_1-2" data-name="Ellipse 1" cx="120" cy="120" r="120" transform="translate(928 438)" fill="url(#radial-gradient)"/>
+      </g>
+      <circle id="Ellipse_2" data-name="Ellipse 2" cx="36" cy="36" r="36" transform="translate(1614 524)" fill="url(#radial-gradient-2)"/>
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Subtraction_6)">
+        <path id="Subtraction_6-2" data-name="Subtraction 6" d="M412.006,598.232A162.7,162.7,0,0,1,306.035,559.5L52.124,341.842A152.057,152.057,0,0,1,22.605,307.85,145.714,145.714,0,0,1,5.018,268.1a141.374,141.374,0,0,1,3.587-85.911L16.7,160h745.55V391.731l-258.2,178.143a159.216,159.216,0,0,1-44.257,21.3A164.465,164.465,0,0,1,412.006,598.232Z" transform="translate(1157.75 -160)" fill="#e3eafa"/>
+      </g>
+      <circle id="Ellipse_1-3" data-name="Ellipse 1" cx="47" cy="47" r="47" transform="translate(1125 111)" fill="url(#radial-gradient)"/>
+    </g>
+  </g>
+</svg>
